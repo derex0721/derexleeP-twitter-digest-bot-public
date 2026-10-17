@@ -15,10 +15,10 @@
 <meta property="og:description" content="Natural language in. Capability out. A local-first personal capability layer.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231B1E1C'/%3E%3Ccircle cx='32' cy='32' r='12' fill='none' stroke='%23F3F4F0' stroke-width='4'/%3E%3Crect x='30' y='24' width='4' height='7' rx='2' fill='%23F3F4F0'/%3E%3C/svg%3E">
 <style>
-/* Way Tools landing · V2.1 Candidate
+/* Way Tools landing · V2
    Quiet UI: green / dark / violet tokens from the product (S4).
    Semantic colour: violet = capability, green = local / verified, dashed = outside or gated.
-   Four surface levels: ground → card → raised panel → product proof. */
+   Three surface levels: ground → card → raised panel → floating mock. */
 :root {
   --ground: #151816;
   --card: #F3F4F0;
@@ -173,15 +173,12 @@ h1, h2, h3 { text-wrap: balance; }
   :root:not([data-theme="light"]) .navend .open { background: var(--green); color: var(--green-ink); }
 }
 @media (min-width: 1001px) {
-  html { scroll-padding-top: var(--nav-offset, 104px); }
+  html { scroll-padding-top: 104px; }
   .top { position: sticky; top: 12px; }
   .top.stuck .nav { background: color-mix(in srgb, var(--card) 88%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-color: var(--edge); box-shadow: var(--elev-2); }
 }
 @media (max-width: 1000px) {
-  .links { order: 3; flex-basis: 100%; margin: 0 -10px; padding: 6px 6px 8px; overflow-x: auto; scroll-padding-inline: 6px; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
-  .links:focus-within { -webkit-mask-image: none; mask-image: none; }
-  .links a { scroll-margin-inline: 6px; }
-  .links a:focus-visible { outline-offset: -3px; }
+  .links { order: 3; flex-basis: 100%; margin: 0 -10px; padding: 0 0 2px; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
   .links::-webkit-scrollbar { display: none; }
 }
 
@@ -193,11 +190,11 @@ h1, h2, h3 { text-wrap: balance; }
 .eyebrow > * { white-space: nowrap; }
 @media (max-width: 480px) { .eyebrow { flex-wrap: wrap; row-gap: 6px; padding: 8px 12px; border-radius: 14px; } }
 .eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 25%, transparent); }
-h1 { margin: 0; font-family: var(--f-display); font-weight: 800; line-height: .96; letter-spacing: -.045em; font-size: clamp(40px, 6vw, 84px); font-size: clamp(40px, 12.6cqi, 92px); }
+h1 { margin: 0; font-family: var(--f-display); font-weight: 800; line-height: .96; letter-spacing: -.045em; font-size: clamp(40px, 6vw, 84px); font-size: clamp(40px, 13.2cqi, 92px); }
 h1 span { display: block; white-space: nowrap; }
 h1 .h1a { color: var(--muted); font-weight: 700; }
 h1 .dot { display: inline; color: var(--green-deep); }
-.sub { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: clamp(20px, 2.3vw, 28px); line-height: 1.3; letter-spacing: -.015em; max-width: 22em; text-wrap: balance; }
+.sub { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: clamp(20px, 2.3vw, 28px); line-height: 1.3; letter-spacing: -.015em; max-width: 22em; }
 html:not([data-ui="en"]) .sub { letter-spacing: 0; line-height: 1.45; font-weight: 600; }
 .lead { margin: 0; color: var(--muted); font-size: 16px; max-width: 34em; }
 .ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
@@ -223,11 +220,10 @@ html:not([data-ui="en"]) .sub { letter-spacing: 0; line-height: 1.45; font-weigh
 .product::after { content: ""; position: absolute; z-index: -1; left: -70px; top: -100px; width: 240px; height: 240px; border-radius: 50%; border: 2px solid var(--pv-ink); opacity: .1; }
 .product-top { position: absolute; top: 16px; right: 16px; left: 16px; display: flex; justify-content: flex-end; align-items: center; gap: 10px; z-index: 3; }
 .eg { color: var(--pv-ink); opacity: .8; }
-.motion-btn { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; min-width: 44px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--pv-line); background: color-mix(in srgb, var(--card) 70%, transparent); color: var(--pv-ink); cursor: pointer; font: 600 12px/1 var(--f-mono); letter-spacing: var(--track); text-transform: uppercase; transition: background-color .2s; }
+.motion-btn { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--pv-line); background: color-mix(in srgb, var(--card) 70%, transparent); color: var(--pv-ink); cursor: pointer; font: 600 12px/1 var(--f-mono); letter-spacing: var(--track); text-transform: uppercase; transition: background-color .2s; }
 .motion-btn:hover { background: var(--card); }
 .motion-btn svg { width: 12px; height: 12px; }
 html:not(.js) .motion-btn { display: none; }
-html:not(.js) .navend button { display: none; }
 html[data-motion="on"] .mo-off, html:not([data-motion="on"]) .mo-on { display: none; }
 .stickers { display: contents; }
 .sticker { position: absolute; z-index: 2; background: var(--card); color: var(--ink); border-radius: 12px; padding: 10px 14px; font: 600 12px/1.25 var(--f-mono); letter-spacing: var(--track); text-transform: uppercase; box-shadow: var(--elev-2); border: 1px solid var(--pv-line); }
@@ -275,13 +271,11 @@ html[data-motion="on"] .mo-off, html:not([data-motion="on"]) .mo-on { display: n
 /* ---------- sections ---------- */
 .sec { margin-top: var(--sec); }
 .head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 16px 56px; align-items: end; margin-bottom: 36px; }
-.head > *, .final > * { min-width: 0; }
 .head > p { margin: 0; color: var(--muted); max-width: 34em; }
 .kicker { margin: 0 0 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; color: var(--muted); }
 .kicker .num { color: var(--green-deep); }
 h2 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: clamp(32px, 4.4vw, 54px); line-height: 1.04; letter-spacing: -.035em; }
 html:not([data-ui="en"]) h2 { line-height: 1.22; letter-spacing: -.01em; }
-html:not([data-ui="en"]) h3 { letter-spacing: 0; }
 html:not([data-ui="en"]) :is(h2, h3, .sub) { word-break: keep-all; overflow-wrap: anywhere; }
 .slogan { text-transform: none !important; letter-spacing: .02em !important; }
 h3 { overflow-wrap: anywhere; }
@@ -313,10 +307,6 @@ html:not([data-motion="on"]) .r-dash, html:not([data-motion="on"]) .runner, html
 .flow-m li.r::before { background: var(--violet); color: var(--violet-ink); }
 .flow-m li.res::before { background: var(--green); color: var(--green-ink); }
 .flow-ret { margin: 6px 0 0 42px; font-size: 14px; color: var(--muted); }
-@media (min-width: 1101px) and (max-width: 1240px) {
-  .lbl-zh, .lbl-en { font-size: 16px; }
-  .lbl-en { letter-spacing: 0; }
-}
 .tiers .label { margin: 0 0 14px; color: var(--muted); }
 .tiers ol { list-style: none; margin: 0; padding: 0; }
 .tier { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
@@ -404,9 +394,9 @@ html:not([data-motion="on"]) .r-dash, html:not([data-motion="on"]) .runner, html
 .chips > span.blk { border-style: dashed; color: var(--muted); }
 .chips s { text-decoration-thickness: 1.5px; text-decoration-color: var(--muted); }
 .chips em { font-style: normal; color: var(--muted); }
-.kbox { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font: 500 12.5px/1.3 var(--f-mono); color: var(--muted); border: 1px dashed var(--line); border-radius: var(--r-1); padding: 10px 12px; background: var(--card); }
+.kbox { display: flex; align-items: center; gap: 10px; font: 500 12.5px/1.3 var(--f-mono); color: var(--muted); border: 1px dashed var(--line); border-radius: var(--r-1); padding: 10px 12px; background: var(--card); }
 .kbox b { color: var(--ink); font-weight: 500; letter-spacing: .12em; }
-.session-label { margin-left: auto; color: var(--green-deep); }
+.timer { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--green-deep); }
 
 /* platforms */
 .plat { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
@@ -439,7 +429,6 @@ html:not([data-motion="on"]) .r-dash, html:not([data-motion="on"]) .runner, html
 
 /* ---------- responsive ---------- */
 @media (max-width: 1100px) {
-  .how { grid-template-columns: minmax(0, 1fr); }
   .ws-entries { grid-template-columns: 1fr; gap: 10px; }
   .ws-entries::before { content: ""; position: absolute; left: 40px; top: 40px; bottom: -24px; width: 2px; background: var(--line); }
   .ws-item { display: grid; grid-template-columns: 40px minmax(0, 13em) minmax(0, 1fr); column-gap: 18px; align-items: center; padding: 16px 20px; }
@@ -454,7 +443,8 @@ html:not([data-motion="on"]) .r-dash, html:not([data-motion="on"]) .runner, html
 }
 @media (max-width: 1000px) {
   .hero { grid-template-columns: 1fr; }
-  .product { min-height: 0; padding: 72px 24px 96px; }
+  .product { min-height: 0; padding: 72px 24px 40px; }
+  .how { grid-template-columns: 1fr; }
   .grad { grid-template-columns: 1fr; gap: 10px; }
   .gstep { flex-direction: row; gap: 16px; }
   .gstep:not(:last-child)::after { top: 44px; bottom: -10px; left: 17px; right: auto; width: 2px; height: auto; background: repeating-linear-gradient(180deg, var(--line) 0 6px, transparent 6px 11px); }
@@ -478,12 +468,6 @@ html:not([data-motion="on"]) .r-dash, html:not([data-motion="on"]) .runner, html
   .ws-item p { grid-column: 2; grid-row: 3; }
   .ws-ic { grid-row: 1 / span 2; }
 }
-@media (max-width: 700px) {
-  .loop { aspect-ratio: auto; display: block; padding: 20px 20px 18px; }
-  .loop svg { display: none; }
-  .loop .tag { position: static; display: block; margin-bottom: 14px; }
-  .flow-m, .flow-ret { display: block; }
-}
 @media (max-width: 620px) {
   :root { --gap: 10px; }
   .card { border-radius: 22px; }
@@ -496,13 +480,16 @@ html:not([data-motion="on"]) .r-dash, html:not([data-motion="on"]) .runner, html
   .stickers { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; position: relative; z-index: 2; }
   .sticker { position: static; transform: none !important; animation: none !important; box-shadow: var(--elev-1); }
   .stack { margin-top: 30px; }
+  .loop { aspect-ratio: auto; display: block; padding: 20px 20px 18px; }
+  .loop svg { display: none; }
+  .loop .tag { position: static; display: block; margin-bottom: 14px; }
+  .flow-m, .flow-ret { display: block; }
   .tools-list { grid-template-columns: 1fr; }
   .tcard, .pane, .tool, .gcard { padding: 20px; }
   .ws-rail { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
 @media (max-width: 430px) {
   .wordmark { display: none; }
-  h1 { font-size: clamp(30px, 12cqi, 44px); }
   .stats b { font-size: 14px; }
 }
 @media (max-width: 360px) {
@@ -516,8 +503,6 @@ html[data-motion="on"] .sticker { animation: bob 5s ease-in-out infinite alterna
 html[data-motion="on"] .s2 { animation-delay: -2s; } html[data-motion="on"] .s3 { animation-delay: -3.5s; }
 @keyframes bob { to { translate: 0 -5px; } }
 html[data-motion="on"] .node { animation: ping 8s var(--ease) infinite; }
-.sticker, .node { animation-play-state: paused !important; }
-html[data-motion="on"] [data-ambient="running"] :is(.sticker, .node) { animation-play-state: running !important; }
 @keyframes ping { 0%, 8%, 100% { transform: scale(1); } 3% { transform: scale(1.3); } }
 .n1 { animation-delay: 0s !important; } .n2 { animation-delay: 1s !important; } .n3 { animation-delay: 2s !important; } .n4 { animation-delay: 3s !important; }
 .n5 { animation-delay: 4s !important; } .n6 { animation-delay: 5s !important; } .n7 { animation-delay: 6s !important; } .n8 { animation-delay: 7s !important; }
@@ -535,9 +520,6 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
 @media (forced-colors: active) {
   .card, .surface, .product, .mock, .final, .ws-rail { border: 1px solid CanvasText; }
   .btn-primary, .navend .open { border: 2px solid ButtonText; }
-  :focus-visible, .final :focus-visible { outline-color: Highlight; }
-  .step b { border: 1px solid CanvasText; }
-  .r-base { stroke: CanvasText; } .node { fill: CanvasText; }
 }
 </style>
 <script>
@@ -579,7 +561,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
           <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
           <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         </button>
-        <button type="button" id="lang" lang="zh-Hant" aria-label="切換為英文"><span lang="en">EN</span></button>
+        <button type="button" id="lang" lang="en" aria-label="Switch to English">EN</button>
         <a class="open" href="https://waytools.pages.dev"><span data-l="zh">開始使用</span><span data-l="en">Open</span></a>
       </div>
     </nav>
@@ -590,7 +572,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow label"><i aria-hidden="true"></i><b>Way Tools</b><span data-l="zh">個人能力層</span><span data-l="en">Personal Capability Layer</span></p>
-        <h1 id="hero-title" lang="en"><span class="h1a">Less AI.</span><span class="h1b">Better System<span class="dot">.</span></span></h1>
+        <h1 id="hero-title"><span class="h1a">Less AI.</span><span class="h1b">Better System<span class="dot">.</span></span></h1>
         <p class="sub"><span data-l="zh">一句話進來，<wbr>能力出去。<br>重複的工作，<wbr>逐漸變成可以重用的能力。</span><span data-l="en">Natural language in. Capability out.<br>Repeated work gradually becomes reusable capability.</span></p>
         <p class="lead"><span data-l="zh">工具、對話、計畫與保存的內容，都在同一個私人工作區。能用本機工具或固定規則完成的，就在本機完成；外部 AI 只補真正未知的缺口，而且會先問你。</span><span data-l="en">Tools, chat, plans and saved content share one private workspace. Anything a local tool or fixed rule can do stays on your device. Outside AI only fills the gaps that are truly unknown, and it asks you first.</span></p>
         <div class="ctas">
@@ -598,7 +580,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
             <span class="btn-t"><small><span data-l="zh">Web · 免安裝</span><span data-l="en">Web · No install</span></small><span><span data-l="zh">開啟 Way Tools</span><span data-l="en">Open Way Tools</span></span></span>
             <span class="btn-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="btn btn-quiet" href="#how"><span data-l="zh">查看運作方式</span><span data-l="en">See how it works</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+          <a class="btn btn-quiet" href="#how"><span data-l="zh">看看它怎麼運作</span><span data-l="en">See how it works</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
         </div>
         <p class="cta-note"><span><span data-l="zh">在瀏覽器裡直接使用</span><span data-l="en">Runs in your browser</span></span><span><span data-l="zh">資料預設留在這台裝置</span><span data-l="en">Data stays on this device by default</span></span></p>
       </div>
@@ -626,10 +608,10 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
             <div class="bubble"><span data-l="zh">把這些連結清理乾淨，然後存起來</span><span data-l="en">Clean these links and save them</span></div>
             <div class="route-row"><span data-l="zh">路線</span><span data-l="en">Route</span><b><span data-l="zh">本機工具 · 固定規則</span><span data-l="en">Local tools · Fixed rules</span></b></div>
             <div class="trace" id="trace">
-              <p class="trace-title"><span data-l="zh">清理並保存連結</span><span data-l="en">Clean &amp; Save Links</span></p>
+              <p class="trace-title">Clean &amp; Save Links</p>
               <div class="step done"><b aria-hidden="true">✓</b><span><span data-l="zh">移除追蹤參數</span><span data-l="en">Strip tracking parameters</span></span><em>URL</em></div>
-              <div class="step done"><b aria-hidden="true">✓</b><span><span data-l="zh">整理成清單</span><span data-l="en">Arrange as a list</span></span><em><span data-l="zh">文字</span><span data-l="en">Text</span></em></div>
-              <div class="step done"><b aria-hidden="true">✓</b><span><span data-l="zh">存入快速記錄</span><span data-l="en">Save to Quick Capture</span></span><em><span data-l="zh">儲存</span><span data-l="en">Save</span></em></div>
+              <div class="step done"><b aria-hidden="true">✓</b><span><span data-l="zh">整理成清單</span><span data-l="en">Arrange as a list</span></span><em>Text</em></div>
+              <div class="step done"><b aria-hidden="true">✓</b><span><span data-l="zh">存入 Quick Capture</span><span data-l="en">Save to Quick Capture</span></span><em>Save</em></div>
             </div>
             <div class="result" id="result"><span data-l="zh">完成。結果已回到對話，可以繼續下一步。</span><span data-l="en">Done. The result is back in the chat, ready for the next step.</span></div>
             <div class="stats">
@@ -655,13 +637,13 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
       <a class="pillar surface" href="#capabilities">
         <span class="label"><span class="pd" style="background:var(--violet-deep)" aria-hidden="true"></span><span data-l="zh">能力累積</span><span data-l="en">Capability compounds</span></span>
         <h3><span data-l="zh">做過的事，<wbr>下次直接可用</span><span data-l="en">What worked becomes reusable</span></h3>
-        <p><span data-l="zh">實驗中的能力養成，讓重複、可重播、可驗證的做法逐步變成穩定能力。</span><span data-l="en">Experimental capability graduation helps repeated, replayable and verifiable work become a stable capability.</span></p>
+        <p><span data-l="zh">重複、可重播、可驗證的做法，逐步變成穩定能力。</span><span data-l="en">Repeated, replayable and verifiable work gradually becomes a stable capability.</span></p>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
       </a>
       <a class="pillar surface" href="#privacy">
         <span class="label"><span class="pd" style="border:1.5px dashed var(--muted)" aria-hidden="true"></span><span data-l="zh">隱私、安全、花費</span><span data-l="en">Privacy, security, cost</span></span>
         <h3><span data-l="zh">看得見，<wbr>也管得住</span><span data-l="en">Visible and under your control</span></h3>
-        <p><span data-l="zh">資料預設留在裝置上；實驗中的外部 AI 連線設計包含事前確認與花費控制。</span><span data-l="en">Data stays on your device by default. Experimental outside-AI connections are designed with approval and spending controls.</span></p>
+        <p><span data-l="zh">資料預設留在裝置上；外部 AI 先問你，花費可設上限。</span><span data-l="en">Data stays on your device by default. Outside AI asks first, and spending can be capped.</span></p>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
       </a>
     </section>
@@ -694,7 +676,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
             </g>
             <g class="lbl lbl-en" data-l="en">
               <text x="44" y="196">INTENT</text><text x="134" y="58">CONTEXT</text><text x="272" y="92">ROUTER</text>
-              <text x="388" y="48">CAPABILITY</text><text x="638" y="137" text-anchor="end">ACTION</text><text x="474" y="274">VERIFY</text>
+              <text x="388" y="48">CAPABILITY</text><text x="580" y="137">ACTION</text><text x="474" y="274">VERIFY</text>
               <text x="334" y="260">RESULT</text><text class="ret" x="178" y="290">↻ CONTEXT</text>
             </g>
           </svg>
@@ -708,7 +690,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
           <ol>
             <li class="tier t1"><span class="tn" aria-hidden="true">1</span><div><h3><span data-l="zh">已驗證的能力</span><span data-l="en">Verified capability</span> <span class="status"><span data-l="zh">實驗中</span><span data-l="en">Experimental</span></span></h3><p><span data-l="zh">重用之前成功、並通過驗證的做法。</span><span data-l="en">Reuse an approach that worked before and passed verification.</span></p></div></li>
             <li class="tier t2"><span class="tn" aria-hidden="true">2</span><div><h3><span data-l="zh">本機工具與固定規則</span><span data-l="en">Local tools and fixed rules</span></h3><p><span data-l="zh">確定性的方法，在你的裝置上完成，不需要模型。</span><span data-l="en">Deterministic methods that run on your device. No model needed.</span></p></div></li>
-            <li class="tier t3"><span class="tn" aria-hidden="true">3</span><div><h3><span data-l="zh">外部 AI，<wbr>只補缺口</span><span data-l="en">Outside AI, for gaps only</span><span class="status"><span data-l="zh">實驗中</span><span data-l="en">Experimental</span></span></h3><p><span data-l="zh">設計上，只有本機做不到的那一步，才詢問是否使用外部 AI；花費控制仍待正式 live-provider 驗收。</span><span data-l="en">By design, only gaps in local capability prompt a request for outside AI. Spending controls still await full live-provider acceptance.</span></p></div></li>
+            <li class="tier t3"><span class="tn" aria-hidden="true">3</span><div><h3><span data-l="zh">外部 AI，<wbr>只補缺口</span><span data-l="en">Outside AI, for gaps only</span></h3><p><span data-l="zh">只有本機做不到的那一步，才會問你要不要使用外部 AI，並受花費上限約束。</span><span data-l="en">Only a step your device can't handle asks whether to use outside AI, within your spending limits.</span></p></div></li>
           </ol>
         </div>
       </div>
@@ -739,7 +721,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
           <p class="kicker"><span class="num">03</span><span data-l="zh">工作區</span><span data-l="en">Workspace</span></p>
           <h2 id="ws-t"><span data-l="zh">一個工作區，<wbr>五個入口</span><span data-l="en">One workspace, five ways in</span></h2>
         </div>
-        <p><span data-l="zh">不用記住工具放在哪裡。從對話、百寶箱、計畫、收藏庫或 My Way 開始，結果都回到同一個工作區。</span><span data-l="en">You do not need to remember where a tool lives. Start from chat, the toolbox, plans, your library or My Way; the work returns to the same workspace.</span></p>
+        <p><span data-l="zh">不用記住工具放在哪裡。從對話、百寶箱、計畫、工具庫或 My Way 開始，結果都回到同一個工作區。</span><span data-l="en">You do not need to remember where a tool lives. Start from chat, the toolbox, plans, your library or My Way; the work returns to the same workspace.</span></p>
       </div>
       <div class="ws">
         <ul class="ws-entries">
@@ -766,7 +748,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
           <li class="ws-item surface">
             <div class="ws-top"><span class="ws-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h5a3 3 0 0 0 3-3V8"/><path d="M6 16V9a3 3 0 0 1 3-3h7"/></svg></span><span class="label">My Way</span></div>
             <h3><span data-l="zh">累積你的使用方式</span><span data-l="en">Build up your way</span></h3>
-            <p><span data-l="zh">在這台裝置累積常用工具與使用方式；已驗證能力的重用仍屬實驗功能，權限不會自動擴張。</span><span data-l="en">Keep favorite tools and working habits on this device. Reusing verified capabilities remains experimental; authority does not expand automatically.</span></p>
+            <p><span data-l="zh">常用工具與已驗證能力留在這裡；能力可以累積，權限不會自動擴張。</span><span data-l="en">Keep favorite tools and verified capabilities here. Capability can compound; authority does not expand automatically.</span></p>
           </li>
         </ul>
         <div class="ws-rail"><i aria-hidden="true"></i><span class="label"><span data-l="zh">同一個工作區</span><span data-l="en">One workspace</span></span><p><span data-l="zh">結果回到這裡，從任何入口都能接著用。</span><span data-l="en">Results return here, so any entry point can pick up where you left off.</span></p></div>
@@ -785,7 +767,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
       <div class="tools-feat">
         <article class="tool surface"><div class="glyph g-img" aria-hidden="true">Im</div><h3><span data-l="zh">圖片壓縮</span><span data-l="en">Image compressor</span></h3><p><span data-l="zh">調整品質與最大寬度，在你的裝置上壓縮。</span><span data-l="en">Set quality and max width. Compression happens on your device.</span></p><div class="sample"><i>4032px</i><span aria-hidden="true">→</span><b>1200px</b><i>·</i>WebP<i>· q80</i></div></article>
         <article class="tool surface"><div class="glyph g-txt" aria-hidden="true">Tx</div><h3><span data-l="zh">文字工具</span><span data-l="en">Text toolkit</span></h3><p><span data-l="zh">大小寫轉換、去除多餘空白、刪除空行、統計字數。</span><span data-l="en">Change case, trim spaces, remove blank lines, count text.</span></p><div class="sample"><i>hello&nbsp;&nbsp;world</i><span aria-hidden="true">→</span><b>Hello World</b></div></article>
-        <article class="tool surface"><div class="glyph g-json" aria-hidden="true">{ }</div><h3><span data-l="zh">JSON 格式化</span><span data-l="en">JSON formatter</span></h3><p><span data-l="zh">格式化、壓縮與驗證 JSON，並指出錯在哪一行。</span><span data-l="en">Format, minify and validate JSON, and point to the broken line.</span></p><div class="sample"><i>{"ok":true,}</i><span aria-hidden="true">→</span><b><span data-l="zh">第 1 行 · 多餘的逗號</span><span data-l="en">line 1 · trailing comma</span></b></div></article>
+        <article class="tool surface"><div class="glyph g-json" aria-hidden="true">{ }</div><h3><span data-l="zh">JSON 格式化</span><span data-l="en">JSON formatter</span></h3><p><span data-l="zh">格式化、壓縮與驗證 JSON，並指出錯在哪一行。</span><span data-l="en">Format, minify and validate JSON, and point to the broken line.</span></p><div class="sample"><i>{"ok":true,}</i><span aria-hidden="true">→</span><b>line 1 · trailing comma</b></div></article>
       </div>
       <ul class="tools-list">
         <li class="titem"><div class="glyph g-ok" aria-hidden="true">Qc</div><h3><span data-l="zh">快速記錄</span><span data-l="en">Quick capture</span></h3><p><span data-l="zh">隨手存下一段內容，之後在 My Way 找回來。</span><span data-l="en">Save a snippet now and find it later in My Way.</span></p></li>
@@ -793,7 +775,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
         <li class="titem"><div class="glyph g-txt" aria-hidden="true">Md</div><h3><span data-l="zh">Markdown 預覽</span><span data-l="en">Markdown preview</span></h3><p><span data-l="zh">邊寫邊看排版結果。</span><span data-l="en">See the formatted result as you write.</span></p></li>
         <li class="titem"><div class="glyph" aria-hidden="true">64</div><h3><span data-l="zh">Base64 工具</span><span data-l="en">Base64 toolkit</span></h3><p><span data-l="zh">Base64 編碼與解碼。</span><span data-l="en">Encode and decode Base64.</span></p></li>
         <li class="titem"><div class="glyph g-json" aria-hidden="true">Cx</div><h3><span data-l="zh">內容檢視器</span><span data-l="en">Context inspector</span></h3><p><span data-l="zh">看見目前工作區帶著哪些內容。</span><span data-l="en">See what the workspace is currently carrying.</span></p></li>
-        <li class="titem"><div class="glyph" aria-hidden="true">Bc</div><h3><span data-l="zh">瀏覽器擷取</span><span data-l="en">Browser capture</span><span class="pill"><span data-l="zh">擴充功能</span><span data-l="en">Extension</span></span></h3><p><span data-l="zh">由你主動觸發，才會擷取瀏覽器內容。</span><span data-l="en">Captures browser content only when you ask.</span></p></li>
+        <li class="titem"><div class="glyph" aria-hidden="true">Bc</div><h3><span data-l="zh">瀏覽器擷取</span><span data-l="en">Browser capture</span><span class="pill">Extension</span></h3><p><span data-l="zh">由你主動觸發，才會擷取瀏覽器內容。</span><span data-l="en">Captures browser content only when you ask.</span></p></li>
       </ul>
     </section>
 
@@ -804,7 +786,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
           <p class="kicker"><span class="num">05</span><span data-l="zh">隱私、安全與花費</span><span data-l="en">Privacy, security and cost</span></p>
           <h2 id="privacy-t"><span data-l="zh">看得見，<wbr>也管得住</span><span data-l="en">Visible, and under your control</span></h2>
         </div>
-        <p><span data-l="zh">能在本機完成的事，不會用到外部 AI。外部連線仍屬實驗功能，設計上會先經過你的確認。</span><span data-l="en">Anything your device can do never touches outside AI. Outside connections are experimental and are designed to ask for your approval before sending.</span></p>
+        <p><span data-l="zh">能在本機完成的事，不會用到外部 AI。真的需要時，每一步都先經過你。</span><span data-l="en">Anything your device can do never touches outside AI. When it's truly needed, every step goes through you first.</span></p>
       </div>
       <div class="trust">
         <article class="tcard surface">
@@ -814,21 +796,21 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
           <div class="demo chips"><span class="on"><span data-l="zh">本機儲存</span><span data-l="en">Local storage</span></span><em aria-hidden="true">·</em><span><span data-l="zh">不自動共享</span><span data-l="en">Not shared automatically</span></span></div>
         </article>
         <article class="tcard surface">
-          <div class="tcard-top"><span class="ico g-json" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="status"><span data-l="zh">實驗中</span><span data-l="en">Experimental</span></span></div>
-          <h3><span data-l="zh">外部 AI 花費控制</span><span data-l="en">Outside-AI spending controls</span></h3>
-          <p><span data-l="zh">實驗中的外部 AI 連線支援每次、每日與每月花費控制；正式 live-provider 驗收尚未完成。</span><span data-l="en">Experimental outside-AI connections support per-use, daily and monthly spending controls. Full live-provider acceptance is not yet complete.</span></p>
+          <div class="tcard-top"><span class="ico g-json" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div>
+          <h3><span data-l="zh">外部 AI 花費可設上限</span><span data-l="en">Set limits for outside-AI spending</span></h3>
+          <p><span data-l="zh">每次、每天、每月各有上限，到了就停。快到上限時，先改用較省的方式或先問你。</span><span data-l="en">Per-use, daily and monthly limits. At the limit it stops. Near it, it switches to a cheaper path or asks you.</span></p>
           <div class="demo meter"><div class="row"><span><span data-l="zh">範例 · 本月</span><span data-l="en">Example · this month</span></span><b>NT$ 42 / 150</b></div><div class="track" role="img" aria-label="NT$ 42 / 150"><i></i><u></u></div></div>
         </article>
-        <article class="tcard surface">
+        <article class="tcard surface" data-watch="key">
           <div class="tcard-top"><span class="ico g-txt" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span class="status"><span data-l="zh">實驗中</span><span data-l="en">Experimental</span></span></div>
-          <h3><span data-l="zh">外部 AI 連線採隔離設計</span><span data-l="en">BYO API isolation by design</span></h3>
-          <p><span data-l="zh">實驗中的 BYO API 連線將金鑰隔離在獨立連接層，不放進主要工作區。連線設計採短時 session；正式 live-provider 驗收尚未完成。</span><span data-l="en">Experimental BYO API isolates the key in a separate connection layer instead of the main workspace. Connections are designed around short-lived sessions; full live-provider acceptance is not yet complete.</span></p>
-          <div class="demo kbox" aria-hidden="true"><span>sk-</span><b>••••••••</b><span class="session-label"><span data-l="zh">短時 session 示意</span><span data-l="en">Short-lived session example</span></span></div>
+          <h3><span data-l="zh">外部 AI 連線採隔離設計</span><span data-l="en">Outside-AI connections stay isolated</span></h3>
+          <p><span data-l="zh">實驗中的 BYO API 連線把金鑰留在獨立連接層，不放進主要工作區。連線採短時 session；正式 live 驗收尚未完成。</span><span data-l="en">Experimental BYO API keeps the key in a separate connection layer instead of the main workspace. Sessions are short-lived; full live-provider acceptance is not yet complete.</span></p>
+          <div class="demo kbox" aria-hidden="true"><span>sk-</span><b>••••••••</b><span class="timer" id="ktimer">29:59</span></div>
         </article>
         <article class="tcard surface">
           <div class="tcard-top"><span class="ico g-img" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span></div>
           <h3><span data-l="zh">送出前先預覽</span><span data-l="en">Preview before sending</span></h3>
-          <p><span data-l="zh">實驗中的外部連線先預覽內容，再只送出你勾選的欄位；整個工作區與高度敏感資料不外送。</span><span data-l="en">Experimental outside connections preview what will be sent. Only selected fields are included; the whole workspace and highly sensitive data are excluded.</span></p>
+          <p><span data-l="zh">只送出你勾選的欄位，不讀取整個工作區。高度敏感的資料一律不外送。</span><span data-l="en">Only the fields you tick are sent, never the whole workspace. Highly sensitive data never leaves.</span></p>
           <div class="demo chips"><span><span data-l="zh">一般</span><span data-l="en">Normal</span></span><span><span data-l="zh">敏感</span><span data-l="en">Sensitive</span></span><span class="blk"><span data-l="zh"><s>高度敏感</s> · 不外送</span><span data-l="en"><s>Highly sensitive</s> · never sent</span></span></div>
         </article>
       </div>
@@ -844,8 +826,8 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
         <p><span data-l="zh">兩個版本使用同一套介面。資料目前預設保存在各自裝置與瀏覽器裡，不會自動共享。</span><span data-l="en">Both use the same interface. Data currently stays on each device by default and is not shared automatically.</span></p>
       </div>
       <div class="plat">
-        <article class="pane surface"><span class="label"><span data-l="zh">網頁版</span><span data-l="en">Web</span></span><h3><span data-l="zh">打開網址就能用</span><span data-l="en">Open a URL and go</span></h3><p><span data-l="zh">手機與桌面瀏覽器都能使用，主題支援跟隨系統、淺色與深色，語言支援繁體中文與英文。</span><span data-l="en">Works in phone and desktop browsers. Theme follows system, light or dark. Traditional Chinese and English supported.</span></p></article>
-        <article class="pane surface"><span class="label"><span data-l="zh">擴充功能</span><span data-l="en">Extension</span></span><h3><span data-l="zh">就在瀏覽器旁邊</span><span data-l="en">Right beside your browser</span></h3><p><span data-l="zh">支援 Chrome 等 Chromium 瀏覽器；Android 瀏覽器支援仍在驗證中。需要瀏覽器內容時由你主動提供，不會在背景擷取。</span><span data-l="en">Supports Chrome and other Chromium browsers. Android browser support is still being validated. Browser content is shared only when you provide it, never captured in the background.</span></p></article>
+        <article class="pane surface"><span class="label">Web</span><h3><span data-l="zh">打開網址就能用</span><span data-l="en">Open a URL and go</span></h3><p><span data-l="zh">手機與桌面瀏覽器都能使用，主題支援跟隨系統、淺色與深色，語言支援繁體中文與英文。</span><span data-l="en">Works in phone and desktop browsers. Theme follows system, light or dark. Traditional Chinese and English supported.</span></p></article>
+        <article class="pane surface"><span class="label">Extension</span><h3><span data-l="zh">就在瀏覽器旁邊</span><span data-l="en">Right beside your browser</span></h3><p><span data-l="zh">支援 Chrome 等 Chromium 瀏覽器，Android 上可搭配 Vivaldi 使用。需要瀏覽器內容時由你主動提供，不會在背景擷取。</span><span data-l="en">Works in Chrome and other Chromium browsers, including Vivaldi on Android. Browser content is shared only when you provide it, never captured in the background.</span></p></article>
       </div>
     </section>
 
@@ -876,7 +858,7 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
       <a href="#where"><span data-l="zh">平台</span><span data-l="en">Platforms</span></a>
       <a href="https://waytools.pages.dev"><span data-l="zh">開啟網頁版 ↗</span><span data-l="en">Open web app ↗</span></a>
     </nav>
-    <span class="foot-note">© 2026 Way Tools · <span data-l="zh">台北製作</span><span data-l="en">Made in Taipei</span></span>
+    <span class="foot-note">© 2026 Way Tools · Made in Taipei</span>
   </footer>
 </div>
 
@@ -887,10 +869,10 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var store = function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} };
   var T = {
-    zh: { toDark: "切換為深色", toLight: "切換為淺色", lang: "切換為英文", langText: "EN", langLang: "en", pause: "暫停動畫", play: "播放動畫",
+    zh: { toDark: "切換為深色", toLight: "切換為淺色", lang: "Switch to English", langText: "EN", langLang: "en",
           loop: "說出需求、帶入內容、判斷路線、選出工具、執行、檢查、結果形成一個循環", nav: "主要導覽", foot: "頁尾導覽" },
-    en: { toDark: "Switch to dark theme", toLight: "Switch to light theme", lang: "Switch to Traditional Chinese", langText: "中文", langLang: "zh-Hant", pause: "Pause motion", play: "Play motion",
-          loop: "Intent, Context, Router, Capability, Action, Verify and Result form a loop", nav: "Main navigation", foot: "Footer navigation" }
+    en: { toDark: "Switch to dark theme", toLight: "Switch to light theme", lang: "切換為中文", langText: "中文", langLang: "zh-Hant",
+          loop: "Intent, Context, Router, Capability, Action, Verify and Result form a loop", nav: "Main", foot: "Footer" }
   };
   var ui = function () { return root.getAttribute("data-ui") === "en" ? "en" : "zh"; };
   var isDark = function () { var t = root.getAttribute("data-theme"); return t ? t === "dark" : mq("(prefers-color-scheme: dark)"); };
@@ -898,20 +880,17 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
   function labels() {
     var L = T[ui()];
     $("theme").setAttribute("aria-label", isDark() ? L.toLight : L.toDark);
-    var lb = $("lang"), text = document.createElement("span");
-    text.textContent = L.langText; text.lang = L.langLang;
-    lb.textContent = ""; lb.appendChild(text); lb.lang = root.lang; lb.setAttribute("aria-label", L.lang);
+    var lb = $("lang"); lb.textContent = L.langText; lb.setAttribute("lang", L.langLang); lb.setAttribute("aria-label", L.lang);
     $("loop-svg").setAttribute("aria-label", L.loop);
     $("nav").setAttribute("aria-label", L.nav);
     $("foot-nav").setAttribute("aria-label", L.foot);
-    $("motion").setAttribute("aria-label", root.getAttribute("data-motion") === "on" ? L.pause : L.play);
   }
 
   /* language */
   $("lang").addEventListener("click", function () {
     var v = ui() === "zh" ? "en" : "zh";
     root.setAttribute("data-ui", v); root.lang = v === "zh" ? "zh-Hant" : "en";
-    store("wt-landing-lang", v); labels(); updateLayout();
+    store("wt-landing-lang", v); labels();
   });
 
   /* theme */
@@ -922,53 +901,34 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
   if (window.matchMedia) { var cs = window.matchMedia("(prefers-color-scheme: dark)"); if (cs.addEventListener) cs.addEventListener("change", labels); }
   labels();
 
-  /* One finite entrance; no background interval or decorative countdown. */
-  var entranceTimer = null;
-  if (root.getAttribute("data-motion") === "on" && !document.hidden) {
-    entranceTimer = setTimeout(function () { root.classList.remove("enter"); entranceTimer = null; }, 1400);
-  } else { root.classList.remove("enter"); }
+  /* entrance animation runs once */
+  setTimeout(function () { root.classList.remove("enter"); }, 1400);
 
-  /* Geometry follows the actual sticky header, including a wrapped nav row.
-     Non-navigation sections clear aria-current, including the hero and toolbox. */
+  /* sticky header shadow (desktop) */
   var top = $("top");
+  var onScroll = function () { top.classList.toggle("stuck", (window.scrollY || window.pageYOffset) > 24); };
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  /* current section in nav */
   var links = [].slice.call(document.querySelectorAll(".links a"));
-  var linkRail = document.querySelector(".links");
-  linkRail.addEventListener("focusin", function (e) {
-    var a = e.target.closest("a");
-    if (!a || linkRail.scrollWidth <= linkRail.clientWidth) return;
-    var box = a.getBoundingClientRect(), rail = linkRail.getBoundingClientRect();
-    if (box.left < rail.left + 6) linkRail.scrollLeft += box.left - rail.left - 6;
-    else if (box.right > rail.right - 6) linkRail.scrollLeft += box.right - rail.right + 6;
-  });
-  var sections = [].slice.call(document.querySelectorAll("main > section"));
-  function onScroll() {
-    top.classList.toggle("stuck", (window.scrollY || window.pageYOffset) > 24);
-    var edge = (parseFloat(getComputedStyle(root).scrollPaddingTop) || 24) + 1, current = "";
-    sections.forEach(function (section) {
-      var box = section.getBoundingClientRect();
-      if (box.height && box.top <= edge && box.bottom > edge) current = section.id;
-    });
-    links.forEach(function (a) {
-      if (current && a.getAttribute("href") === "#" + current) a.setAttribute("aria-current", "location");
-      else a.removeAttribute("aria-current");
-    });
+  if ("IntersectionObserver" in window) {
+    var byId = {}; links.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+    var navIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) { a.removeAttribute("aria-current"); });
+        var a = byId[e.target.id]; if (a) a.setAttribute("aria-current", "location");
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    ["how", "capabilities", "workspace", "tools", "privacy", "where"].forEach(function (id) { var s = $(id); if (s) navIO.observe(s); });
+    navIO.observe(document.querySelector(".hero"));
   }
-  function updateLayout() {
-    root.style.setProperty("--nav-offset", Math.ceil(top.getBoundingClientRect().height + 24) + "px");
-    onScroll();
-    if (watched) sync();
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", updateLayout, { passive: true });
-  updateLayout();
 
   /* ---------- motion: everything ambient obeys one switch ---------- */
   var motionOn = function () { return root.getAttribute("data-motion") === "on"; };
-  var vis = { product: false, how: false };
-  var watched = [].slice.call(document.querySelectorAll("[data-watch]"));
-  var pageActive = true;
+  var vis = { product: true, how: false, key: false };
 
-  // Illustrative trace; the completed static result remains available when paused.
+  // live trace in the hero mock
   var trace = $("trace"), result = $("result");
   var steps = [].slice.call(trace.querySelectorAll(".step"));
   var tTimer = null, tRunning = false;
@@ -997,39 +957,27 @@ html[data-motion="on"].enter .product { animation: rise .9s .1s var(--ease) both
   }
   function tracePlay() { if (tRunning) return; tRunning = true; tTimer = setTimeout(traceCycle, 1200); }
 
+  // example countdown in the isolation card
+  var kt = $("ktimer"), left = 30 * 60 - 1, kInt = null;
+  function keyPlay() { if (kInt) return; kInt = setInterval(function () { left = left > 0 ? left - 1 : 30 * 60 - 1; kt.textContent = String(Math.floor(left / 60)).padStart(2, "0") + ":" + String(left % 60).padStart(2, "0"); }, 1000); }
+  function keyStop() { clearInterval(kInt); kInt = null; }
+
   var svg = $("loop-svg");
   function sync() {
-    var on = motionOn() && !document.hidden && pageActive;
-    watched.forEach(function (el) { el.setAttribute("data-ambient", on && vis[el.getAttribute("data-watch")] ? "running" : "paused"); });
+    var on = motionOn() && !document.hidden;
     if (on && vis.product) tracePlay(); else traceDone();
-    if (svg && svg.pauseAnimations) { if (on && vis.how && svg.getClientRects().length) svg.unpauseAnimations(); else svg.pauseAnimations(); }
-    if (!on) {
-      clearTimeout(entranceTimer); entranceTimer = null; root.classList.remove("enter");
-    }
+    if (svg && svg.pauseAnimations) { if (on && vis.how) svg.unpauseAnimations(); else svg.pauseAnimations(); }
+    if (on && vis.key) keyPlay(); else keyStop();
   }
-  var io = null;
   if ("IntersectionObserver" in window) {
-    io = new IntersectionObserver(function (es) { es.forEach(function (e) { vis[e.target.getAttribute("data-watch")] = e.isIntersecting; }); sync(); });
-    watched.forEach(function (el) { io.observe(el); });
-  }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { vis[e.target.getAttribute("data-watch")] = e.isIntersecting; }); sync(); }, { threshold: 0.15 });
+    [].forEach.call(document.querySelectorAll("[data-watch]"), function (el) { io.observe(el); });
+  } else { vis = { product: true, how: true, key: true }; }
   document.addEventListener("visibilitychange", sync);
-  window.addEventListener("pagehide", function () { pageActive = false; if (io) io.disconnect(); sync(); });
-  window.addEventListener("pageshow", function () { pageActive = true; if (io) watched.forEach(function (el) { io.observe(el); }); updateLayout(); });
-
-  /* Follow a changed system motion preference until a manual choice is saved. */
-  if (window.matchMedia) {
-    var rm = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (rm.addEventListener) rm.addEventListener("change", function (e) {
-      var saved = null; try { saved = localStorage.getItem("wt-landing-motion"); } catch (err) {}
-      if (saved !== "on" && saved !== "off") {
-        root.setAttribute("data-motion", e.matches ? "off" : "on"); labels(); sync();
-      }
-    });
-  }
 
   $("motion").addEventListener("click", function () {
     var on = !motionOn();
-    root.setAttribute("data-motion", on ? "on" : "off"); store("wt-landing-motion", on ? "on" : "off"); labels(); sync();
+    root.setAttribute("data-motion", on ? "on" : "off"); store("wt-landing-motion", on ? "on" : "off"); sync();
   });
   sync();
 })();
